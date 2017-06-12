@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import createReactClass from 'create-react-class';
 import Reflux from 'reflux';
+import createReactClass from 'create-react-class';
+import styled from 'react-emotion';
 
-import SidebarPanel from '../sidebarPanel';
-
-import IncidentStore from '../../stores/incidentStore';
 import {t} from '../../locale';
+import Button from '../buttons/button';
+import IconSidebarStatus from '../../icons/icon-sidebar-status';
+import IncidentStore from '../../stores/incidentStore';
+import SidebarItem from './sidebarItem';
+import SidebarPanel from './sidebarPanel';
+import SidebarPanelEmpty from './sidebarPanelEmpty';
 
 const Incidents = createReactClass({
   displayName: 'Incidents',
 
   propTypes: {
+    collapsed: PropTypes.bool,
     showPanel: PropTypes.bool,
     currentPanel: PropTypes.string,
     hidePanel: PropTypes.func,
@@ -33,53 +38,99 @@ const Incidents = createReactClass({
   },
 
   render() {
+    let {collapsed, currentPanel, showPanel, hidePanel, onShowPanel} = this.props;
     let {status} = this.state;
     if (!status) return null;
+    let active = currentPanel === 'statusupdate';
+
+    // TODO(billy): Only show when `status.incidents` > 0
+
+    let isEmpty = true || (!status.incidents && status.incidents.length === 0);
 
     return (
-      status &&
-      status.incidents.length > 0 && (
-        <li className={this.props.currentPanel == 'statusupdate' ? 'active' : null}>
-          <a onClick={this.props.onShowPanel}>
-            <span className="icon icon-alert animated pulse infinite" />
-          </a>
-          {this.props.showPanel &&
-            this.props.currentPanel == 'statusupdate' &&
-            status && (
-              <SidebarPanel
-                title={t('Recent status updates')}
-                hidePanel={this.props.hidePanel}
-              >
-                <ul className="incident-list list-unstyled">
-                  {status.incidents.map(incident => (
-                    <li className="incident-item" key={incident.id}>
-                      <h4>{incident.title}</h4>
-                      {incident.updates ? (
-                        <div>
-                          <h6>Latest updates:</h6>
-                          <ul className="status-list list-unstyled">
-                            {incident.updates.map((update, key) => (
-                              <li className="status-item" key={key}>
-                                <p>{update}</p>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null}
-                      <p>
-                        <a href={incident.url} className="btn btn-default btn-sm">
-                          Learn more
-                        </a>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </SidebarPanel>
-            )}
-        </li>
-      )
+      <div>
+        <SidebarItem
+          id="statusupdate"
+          collapsed={collapsed}
+          active={active}
+          icon={<IconSidebarStatus size={22} className="animated pulse infinite" />}
+          label={t('Service status')}
+          onClick={onShowPanel}
+        />
+        {showPanel &&
+          active &&
+          status && (
+            <SidebarPanel
+              title={t('Recent status updates')}
+              hidePanel={hidePanel}
+              collapsed={collapsed}
+            >
+              {isEmpty && (
+                <SidebarPanelEmpty>
+                  {t('There are no incidents to report')}
+                </SidebarPanelEmpty>
+              )}
+              <IncidentList className="incident-list">
+                {status.incidents.map(incident => (
+                  <IncidentItem key={incident.id}>
+                    <IncidentTitle>{incident.title}</IncidentTitle>
+                    {incident.updates ? (
+                      <div>
+                        <StatusHeader>{t('Latest updates:')}</StatusHeader>
+                        <StatusList>
+                          {incident.updates.map((update, key) => (
+                            <StatusItem key={key}>{update}</StatusItem>
+                          ))}
+                        </StatusList>
+                      </div>
+                    ) : null}
+                    <p>
+                      <Button href={incident.url} size="small" external>
+                        {t('Learn more')}
+                      </Button>
+                    </p>
+                  </IncidentItem>
+                ))}
+              </IncidentList>
+            </SidebarPanel>
+          )}
+      </div>
     );
   },
 });
 
 export default Incidents;
+
+const IncidentList = styled('ul')`
+  list-style: none;
+  padding: 20px 20px 0;
+  font-size: 13px;
+`;
+
+const IncidentItem = styled('li')`
+  border-bottom: 1px solid ${p => p.theme.borderLight};
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+`;
+
+const IncidentTitle = styled('div')`
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 15px;
+`;
+const StatusHeader = styled('div')`
+  color: #7c6a8e;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+`;
+const StatusList = styled('ul')`
+  list-style: none;
+  padding: 0;
+`;
+const StatusItem = styled('li')`
+  margin-bottom: 15px;
+  line-height: 1.5;
+`;

@@ -190,7 +190,7 @@ urlpatterns = patterns(
     ),
 
     url(
-        r'^relay/aorta/$',
+        r'^relays/heartbeat/$',
         RelayAortaEndpoint.as_view(),
         name='sentry-api-0-relay-aorta'
     ),

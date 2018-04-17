@@ -1,15 +1,15 @@
 import {Box} from 'grid-emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
-
 import createReactClass from 'create-react-class';
 
 import {addErrorMessage} from '../../../../actionCreators/indicator';
 import ApiMixin from '../../../../mixins/apiMixin';
+import AvatarChooser from '../../../../components/avatarChooser';
 import Form from '../../components/forms/form';
 import JsonForm from '../../components/forms/jsonForm';
-import organizationSettingsFields from '../../../../data/forms/organizationGeneralSettings';
 import OrganizationState from '../../../../mixins/organizationState';
+import organizationSettingsFields from '../../../../data/forms/organizationGeneralSettings';
 
 const NewOrganizationSettingsForm = createReactClass({
   displayName: 'NewOrganizationSettingsForm',
@@ -26,12 +26,12 @@ const NewOrganizationSettingsForm = createReactClass({
 
   render() {
     let {initialData, orgId, onSave, access} = this.props;
-
+    let endpoint = `/organizations/${orgId}/`;
     return (
       <Form
         className="ref-organization-settings"
         apiMethod="PUT"
-        apiEndpoint={`/organizations/${orgId}/`}
+        apiEndpoint={endpoint}
         saveOnBlur
         allowUndo
         initialData={initialData}
@@ -57,6 +57,7 @@ const NewOrganizationSettingsForm = createReactClass({
             location={this.props.location}
             forms={organizationSettingsFields}
           />
+          <AvatarChooser allowGravatar={false} endpoint={endpoint} model={initialData} />
         </Box>
       </Form>
     );

@@ -2,19 +2,20 @@ import {Box} from 'grid-emotion';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import {Panel, PanelHeader} from '../../../components/panels';
 import {addErrorMessage, addLoadingMessage} from '../../../actionCreators/indicator';
 import {removeTeam} from '../../../actionCreators/teams';
 import {t, tct} from '../../../locale';
 import AsyncView from '../../asyncView';
+import AvatarChooser from '../../../components/avatarChooser';
+import Button from '../../../components/buttons/button';
+import Confirm from '../../../components/confirm';
+import Field from '../components/forms/field';
 import Form from '../components/forms/form';
 import JsonForm from '../components/forms/jsonForm';
+import SentryTypes from '../../../proptypes';
 import TeamModel from './model';
 import teamSettingsFields from '../../../data/forms/teamSettingsFields';
-import {Panel, PanelHeader} from '../../../components/panels';
-import Field from '../components/forms/field';
-import Button from '../../../components/buttons/button';
-import SentryTypes from '../../../proptypes';
-import Confirm from '../../../components/confirm';
 
 export default class TeamSettings extends AsyncView {
   static propTypes = {
@@ -64,9 +65,10 @@ export default class TeamSettings extends AsyncView {
   };
 
   renderBody() {
-    let team = this.props.team;
+    let {location, organization} = this.context;
+    let {team} = this.props;
 
-    let access = new Set(this.context.organization.access);
+    let access = new Set(organization.access);
 
     return (
       <React.Fragment>
@@ -83,9 +85,15 @@ export default class TeamSettings extends AsyncView {
           }}
         >
           <Box>
-            <JsonForm location={this.context.location} forms={teamSettingsFields} />
+            <JsonForm location={location} forms={teamSettingsFields} />
           </Box>
         </Form>
+
+        <AvatarChooser
+          allowGravatar={false}
+          endpoint={`/teams/${organization.slug}/${team.slug}/`}
+          model={team}
+        />
 
         {access.has('team:admin') && (
           <Panel>

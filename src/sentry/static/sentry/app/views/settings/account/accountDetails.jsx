@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {updateUser} from '../../../actionCreators/account';
-import AccountAvatar from '../account/avatar';
 import AsyncView from '../../asyncView';
+import AvatarChooser from '../../../components/avatarChooser';
 import Form from '../components/forms/form';
 import JsonForm from '../components/forms/jsonForm';
 import SettingsPageHeader from '../components/settingsPageHeader';
@@ -29,7 +29,6 @@ class AccountDetails extends AsyncView {
     return (
       <div>
         <SettingsPageHeader title="Account Details" />
-
         <Form
           apiMethod="PUT"
           apiEndpoint={ENDPOINT}
@@ -44,7 +43,6 @@ class AccountDetails extends AsyncView {
             additionalFieldProps={{user}}
           />
         </Form>
-
         <Form
           apiMethod="PUT"
           apiEndpoint={ENDPOINT}
@@ -55,7 +53,12 @@ class AccountDetails extends AsyncView {
           <JsonForm location={this.props.location} forms={accountPreferencesFields} />
         </Form>
 
-        <AccountAvatar onSave={this.handleSubmitSuccess} user={user} />
+        <AvatarChooser
+          endpoint="/users/me/avatar/"
+          model={user}
+          onSave={this.handleSubmitSuccess}
+          isUser
+        />
       </div>
     );
   }

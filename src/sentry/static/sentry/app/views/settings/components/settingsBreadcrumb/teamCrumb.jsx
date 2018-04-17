@@ -3,10 +3,12 @@ import {browserHistory} from 'react-router';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Avatar from '../../../../components/avatar';
 import BreadcrumbDropdown from './breadcrumbDropdown';
 import MenuItem from './menuItem';
 import TextLink from '../../../../components/textLink';
 import recreateRoute from '../../../../utils/recreateRoute';
+import space from '../../../../styles/space';
 import withTeams from '../../../../utils/withTeams';
 
 class TeamCrumb extends React.Component {
@@ -33,7 +35,9 @@ class TeamCrumb extends React.Component {
               params: {...params, teamId: team.slug},
             })}
           >
-            <Flex align="center">#{team.slug}</Flex>
+            <Flex align="center">
+              <Avatar size={18} css={{marginRight: space(1)}} team={team} />#{team.slug}
+            </Flex>
           </TextLink>
         }
         onSelect={item => {

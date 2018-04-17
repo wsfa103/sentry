@@ -3,12 +3,13 @@ import {browserHistory} from 'react-router';
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import Avatar from '../../../../components/avatar';
 import BreadcrumbDropdown from './breadcrumbDropdown';
-import LetterAvatar from '../../../../components/letterAvatar';
 import MenuItem from './menuItem';
 import SentryTypes from '../../../../proptypes';
 import TextLink from '../../../../components/textLink';
 import recreateRoute from '../../../../utils/recreateRoute';
+import space from '../../../../styles/space';
 import withLatestContext from '../../../../utils/withLatestContext';
 
 class OrganizationCrumb extends React.Component {
@@ -36,13 +37,11 @@ class OrganizationCrumb extends React.Component {
             })}
           >
             <Flex align="center">
-              <span style={{width: 18, height: 18, marginRight: 6}}>
-                <LetterAvatar
-                  style={{display: 'inline-block'}}
-                  displayName={organization.slug}
-                  identifier={organization.slug}
-                />
-              </span>
+              <Avatar
+                css={{marginRight: space(1)}}
+                organization={organization}
+                size={18}
+              />
               {organization.slug}
             </Flex>
           </TextLink>

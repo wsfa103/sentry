@@ -1,10 +1,10 @@
 import {browserHistory} from 'react-router';
+import {mount} from 'enzyme';
 import React from 'react';
 
 import ProjectGeneralSettings from 'app/views/projectGeneralSettings';
 import ProjectContext from 'app/views/projects/projectContext';
 import ProjectsStore from 'app/stores/projectsStore';
-import {mountWithTheme} from '../../../helpers';
 
 jest.mock('app/utils/recreateRoute');
 jest.mock('jquery');
@@ -51,7 +51,7 @@ describe('projectGeneralSettings', function() {
   });
 
   it('renders form fields', function() {
-    let wrapper = mountWithTheme(
+    let wrapper = mount(
       <ProjectGeneralSettings params={{orgId: org.slug, projectId: project.slug}} />,
       TestStubs.routerContext()
     );
@@ -87,7 +87,7 @@ describe('projectGeneralSettings', function() {
   it('disables field when equivalent org setting is true', function() {
     routerContext.context.organization.dataScrubber = true;
     routerContext.context.organization.scrubIPAddresses = false;
-    let wrapper = mountWithTheme(
+    let wrapper = mount(
       <ProjectGeneralSettings params={{orgId: org.slug, projectId: project.slug}} />,
       routerContext
     );
@@ -105,7 +105,7 @@ describe('projectGeneralSettings', function() {
       method: 'DELETE',
     });
 
-    let wrapper = mountWithTheme(
+    let wrapper = mount(
       <ProjectGeneralSettings params={{orgId: org.slug, projectId: project.slug}} />,
       TestStubs.routerContext()
     );
@@ -129,7 +129,7 @@ describe('projectGeneralSettings', function() {
       method: 'POST',
     });
 
-    let wrapper = mountWithTheme(
+    let wrapper = mount(
       <ProjectGeneralSettings params={{orgId: org.slug, projectId: project.slug}} />,
       TestStubs.routerContext()
     );
@@ -160,7 +160,7 @@ describe('projectGeneralSettings', function() {
 
   it('displays transfer/remove message for non-admins', function() {
     routerContext.context.organization.access = ['org:read'];
-    let wrapper = mountWithTheme(
+    let wrapper = mount(
       <ProjectGeneralSettings params={{orgId: org.slug, projectId: project.slug}} />,
       routerContext
     );
@@ -184,7 +184,7 @@ describe('projectGeneralSettings', function() {
         slug: 'new-project',
       },
     });
-    let wrapper = mountWithTheme(
+    let wrapper = mount(
       <ProjectContext orgId={org.slug} projectId={project.slug}>
         <ProjectGeneralSettings
           routes={[]}
@@ -236,7 +236,7 @@ describe('projectGeneralSettings', function() {
           slug: 'new-project',
         },
       });
-      wrapper = mountWithTheme(
+      wrapper = mount(
         <ProjectContext orgId={org.slug} projectId={project.slug}>
           <ProjectGeneralSettings
             routes={[]}

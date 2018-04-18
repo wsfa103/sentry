@@ -83,7 +83,7 @@ exports[`projectAlertRules renders 1`] = `
           }
         >
           <div
-            className="css-foidy-Wrapper css-17jmgia0"
+            className="css-t5gfr9-Wrapper css-17jmgia0"
           >
             <Flex
               align="center"
@@ -167,7 +167,7 @@ exports[`projectAlertRules renders 1`] = `
                                             width="12px"
                                           >
                                             <svg
-                                              className="css-1vxxnb61 css-1rlza0i-StyledSvg css-adkcw30"
+                                              className="css-1vxxnb61 css-1jjmnki-StyledSvg-StyledInlineSvg css-adkcw30"
                                               height="12px"
                                               viewBox={Object {}}
                                               width="12px"
@@ -289,7 +289,7 @@ exports[`projectAlertRules renders 1`] = `
           <Panel>
             <StyledPanel>
               <div
-                className="css-wfa8ap-StyledPanel css-5bw71w0"
+                className="css-17bqt4b-StyledPanel css-5bw71w0"
               >
                 <PanelHeader
                   align="center"
@@ -303,34 +303,34 @@ exports[`projectAlertRules renders 1`] = `
                   >
                     <Component
                       align="center"
-                      className="css-18dfj8-StyledPanelHeader css-1t1cqk30"
+                      className="css-yk06vx-StyledPanelHeader-getPadding css-1t1cqk30"
                       justify="space-between"
                     >
                       <Flex
                         align="center"
-                        className="css-18dfj8-StyledPanelHeader css-1t1cqk30"
+                        className="css-yk06vx-StyledPanelHeader-getPadding css-1t1cqk30"
                         justify="space-between"
                       >
                         <Base
                           align="center"
-                          className="css-1t1cqk30 css-mmen68"
+                          className="css-1t1cqk30 css-17o4jsc-StyledPanelHeader-getPadding"
                           justify="space-between"
                         >
                           <div
-                            className="css-1t1cqk30 css-mmen68"
+                            className="css-1t1cqk30 css-17o4jsc-StyledPanelHeader-getPadding"
                             is={null}
                           >
                             <TextColorLink
                               to="1/"
                             >
                               <Link
-                                className="css-1763h46-TextColorLink css-ksblzz0"
+                                className="css-1s5bpjc-TextColorLink css-ksblzz0"
                                 onlyActiveOnIndex={false}
                                 style={Object {}}
                                 to="1/"
                               >
                                 <a
-                                  className="css-1763h46-TextColorLink css-ksblzz0"
+                                  className="css-1s5bpjc-TextColorLink css-ksblzz0"
                                   onClick={[Function]}
                                   style={Object {}}
                                 >
@@ -506,7 +506,7 @@ exports[`projectAlertRules renders 1`] = `
                       >
                         <RuleDescriptionColumn>
                           <div
-                            className="css-ta36pl-RuleDescriptionColumn css-ksblzz2"
+                            className="css-15obcn9-RuleDescriptionColumn css-ksblzz2"
                           >
                             <Condition>
                               <div
@@ -536,7 +536,7 @@ exports[`projectAlertRules renders 1`] = `
                         </RuleDescriptionColumn>
                         <RuleDescriptionColumn>
                           <div
-                            className="css-ta36pl-RuleDescriptionColumn css-ksblzz2"
+                            className="css-15obcn9-RuleDescriptionColumn css-ksblzz2"
                           >
                             <Condition>
                               <div

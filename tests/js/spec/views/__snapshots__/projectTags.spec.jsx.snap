@@ -21,7 +21,7 @@ exports[`ProjectTags renders 1`] = `
         >
           <Wrapper>
             <div
-              className="css-foidy-Wrapper css-17jmgia0"
+              className="css-t5gfr9-Wrapper css-17jmgia0"
             >
               <Flex
                 align="center"
@@ -93,25 +93,25 @@ exports[`ProjectTags renders 1`] = `
         <Panel>
           <StyledPanel>
             <div
-              className="css-wfa8ap-StyledPanel css-5bw71w0"
+              className="css-17bqt4b-StyledPanel css-5bw71w0"
             >
               <PanelHeader>
                 <StyledPanelHeader>
                   <Component
-                    className="css-kf498j-StyledPanelHeader css-1t1cqk30"
+                    className="css-18jrszy-StyledPanelHeader-getPadding css-1t1cqk30"
                   >
                     <Flex
                       align="center"
-                      className="css-kf498j-StyledPanelHeader css-1t1cqk30"
+                      className="css-18jrszy-StyledPanelHeader-getPadding css-1t1cqk30"
                       justify="space-between"
                     >
                       <Base
                         align="center"
-                        className="css-1t1cqk30 css-hj6snb"
+                        className="css-1t1cqk30 css-16zagq0-StyledPanelHeader-getPadding"
                         justify="space-between"
                       >
                         <div
-                          className="css-1t1cqk30 css-hj6snb"
+                          className="css-1t1cqk30 css-16zagq0-StyledPanelHeader-getPadding"
                           is={null}
                         >
                           <Flex>
@@ -167,11 +167,11 @@ exports[`ProjectTags renders 1`] = `
                     >
                       <Base
                         align="center"
-                        className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                        className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                         p={0}
                       >
                         <div
-                          className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                          className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                           is={null}
                         >
                           <Box
@@ -194,7 +194,7 @@ exports[`ProjectTags renders 1`] = `
                                 </span>
                                 <Description>
                                   <span
-                                    className="css-1qgh7d2-Description css-12xt8p30"
+                                    className="css-ecmgih-Description css-12xt8p30"
                                   >
                                     browser
                                   </span>
@@ -314,11 +314,11 @@ exports[`ProjectTags renders 1`] = `
                     >
                       <Base
                         align="center"
-                        className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                        className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                         p={0}
                       >
                         <div
-                          className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                          className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                           is={null}
                         >
                           <Box
@@ -341,7 +341,7 @@ exports[`ProjectTags renders 1`] = `
                                 </span>
                                 <Description>
                                   <span
-                                    className="css-1qgh7d2-Description css-12xt8p30"
+                                    className="css-ecmgih-Description css-12xt8p30"
                                   >
                                     device
                                   </span>
@@ -461,11 +461,11 @@ exports[`ProjectTags renders 1`] = `
                     >
                       <Base
                         align="center"
-                        className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                        className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                         p={0}
                       >
                         <div
-                          className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                          className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                           is={null}
                         >
                           <Box
@@ -488,7 +488,7 @@ exports[`ProjectTags renders 1`] = `
                                 </span>
                                 <Description>
                                   <span
-                                    className="css-1qgh7d2-Description css-12xt8p30"
+                                    className="css-ecmgih-Description css-12xt8p30"
                                   >
                                     url
                                   </span>
@@ -608,11 +608,11 @@ exports[`ProjectTags renders 1`] = `
                     >
                       <Base
                         align="center"
-                        className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                        className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                         p={0}
                       >
                         <div
-                          className="ref-tag-row css-e60paj-StyledPanelItem css-q9h14u0"
+                          className="ref-tag-row css-1oshx4q-StyledPanelItem css-q9h14u0"
                           is={null}
                         >
                           <Box
@@ -635,7 +635,7 @@ exports[`ProjectTags renders 1`] = `
                                 </span>
                                 <Description>
                                   <span
-                                    className="css-1qgh7d2-Description css-12xt8p30"
+                                    className="css-ecmgih-Description css-12xt8p30"
                                   >
                                     environment
                                   </span>

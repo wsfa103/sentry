@@ -21,21 +21,21 @@ exports[`OrganizationTeamProjects Should render 1`] = `
             hasButtons={true}
           >
             <Component
-              className="css-vzwv85-StyledPanelHeader css-1t1cqk30"
+              className="css-m7yag1-StyledPanelHeader-getPadding css-1t1cqk30"
               hasButtons={true}
             >
               <Flex
                 align="center"
-                className="css-vzwv85-StyledPanelHeader css-1t1cqk30"
+                className="css-m7yag1-StyledPanelHeader-getPadding css-1t1cqk30"
                 justify="space-between"
               >
                 <Base
                   align="center"
-                  className="css-1t1cqk30 css-1h9uuh9"
+                  className="css-1t1cqk30 css-10zy006-StyledPanelHeader-getPadding"
                   justify="space-between"
                 >
                   <div
-                    className="css-1t1cqk30 css-1h9uuh9"
+                    className="css-1t1cqk30 css-10zy006-StyledPanelHeader-getPadding"
                     is={null}
                   >
                     <div>
@@ -153,7 +153,7 @@ exports[`OrganizationTeamProjects Should render 1`] = `
                                                               width="1em"
                                                             >
                                                               <svg
-                                                                className="css-1pig06q0 css-1vk3ljv-StyledSvg css-adkcw30"
+                                                                className="css-1pig06q0 css-1gdv3x4-StyledSvg-StyledChevronDown css-adkcw30"
                                                                 height="1em"
                                                                 viewBox={Object {}}
                                                                 width="1em"
@@ -210,11 +210,11 @@ exports[`OrganizationTeamProjects Should render 1`] = `
                   p={2}
                 >
                   <Base
-                    className="css-1cam9p51 css-1mlpbpg-StyledPanelItem css-q9h14u0"
+                    className="css-1cam9p51 css-1d976we-StyledPanelItem-StyledPanelItem css-q9h14u0"
                     p={2}
                   >
                     <div
-                      className="css-1cam9p51 css-1mlpbpg-StyledPanelItem css-q9h14u0"
+                      className="css-1cam9p51 css-1d976we-StyledPanelItem-StyledPanelItem css-q9h14u0"
                       is={null}
                     >
                       <ProjectItem
@@ -492,7 +492,7 @@ exports[`OrganizationTeamProjects Should render 1`] = `
                                         width="1em"
                                       >
                                         <svg
-                                          className="css-1cam9p50 css-1jgfaio-StyledSvg css-adkcw30"
+                                          className="css-1cam9p50 css-10g0ex9-StyledSvg-RemoveIcon css-adkcw30"
                                           height="1em"
                                           viewBox={Object {}}
                                           width="1em"

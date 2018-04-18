@@ -133,7 +133,7 @@ exports[`OrganizationApiKeysList renders 1`] = `
                                         width="12px"
                                       >
                                         <svg
-                                          className="css-1vxxnb61 css-1rlza0i-StyledSvg css-adkcw30"
+                                          className="css-1vxxnb61 css-1jjmnki-StyledSvg-StyledInlineSvg css-adkcw30"
                                           height="12px"
                                           viewBox={Object {}}
                                           width="12px"
@@ -253,21 +253,21 @@ exports[`OrganizationApiKeysList renders 1`] = `
             >
               <Component
                 align="center"
-                className="css-18fb6u1-StyledPanelHeader css-1t1cqk30"
+                className="css-4b6nsw-StyledPanelHeader-getPadding css-1t1cqk30"
                 disablePadding={true}
               >
                 <Flex
                   align="center"
-                  className="css-18fb6u1-StyledPanelHeader css-1t1cqk30"
+                  className="css-4b6nsw-StyledPanelHeader-getPadding css-1t1cqk30"
                   justify="space-between"
                 >
                   <Base
                     align="center"
-                    className="css-1t1cqk30 css-1pqpjvf"
+                    className="css-1t1cqk30 css-1nuqm32-StyledPanelHeader-getPadding"
                     justify="space-between"
                   >
                     <div
-                      className="css-1t1cqk30 css-1pqpjvf"
+                      className="css-1t1cqk30 css-1nuqm32-StyledPanelHeader-getPadding"
                       is={null}
                     >
                       <Flex

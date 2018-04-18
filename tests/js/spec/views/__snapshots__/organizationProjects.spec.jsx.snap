@@ -116,7 +116,7 @@ exports[`OrganizationProjectsView render() Should render the projects in the sto
                                               width="12px"
                                             >
                                               <svg
-                                                className="css-1vxxnb61 css-1rlza0i-StyledSvg css-adkcw30"
+                                                className="css-1vxxnb61 css-1jjmnki-StyledSvg-StyledInlineSvg css-adkcw30"
                                                 height="12px"
                                                 viewBox={Object {}}
                                                 width="12px"
@@ -158,21 +158,21 @@ exports[`OrganizationProjectsView render() Should render the projects in the sto
                   hasButtons={true}
                 >
                   <Component
-                    className="css-vzwv85-StyledPanelHeader css-1t1cqk30"
+                    className="css-m7yag1-StyledPanelHeader-getPadding css-1t1cqk30"
                     hasButtons={true}
                   >
                     <Flex
                       align="center"
-                      className="css-vzwv85-StyledPanelHeader css-1t1cqk30"
+                      className="css-m7yag1-StyledPanelHeader-getPadding css-1t1cqk30"
                       justify="space-between"
                     >
                       <Base
                         align="center"
-                        className="css-1t1cqk30 css-1h9uuh9"
+                        className="css-1t1cqk30 css-10zy006-StyledPanelHeader-getPadding"
                         justify="space-between"
                       >
                         <div
-                          className="css-1t1cqk30 css-1h9uuh9"
+                          className="css-1t1cqk30 css-10zy006-StyledPanelHeader-getPadding"
                           is={null}
                         >
                           Projects
@@ -186,7 +186,7 @@ exports[`OrganizationProjectsView render() Should render the projects in the sto
                               value=""
                             >
                               <input
-                                className="search css-qqayil-Input css-jwa1yb0"
+                                className="search css-rjj0wg-Input-inputStyles css-jwa1yb0"
                                 onChange={[Function]}
                                 placeholder="Search Projects"
                                 value=""

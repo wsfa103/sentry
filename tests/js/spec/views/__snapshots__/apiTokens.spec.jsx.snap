@@ -265,21 +265,21 @@ exports[`ApiTokens renders with result 1`] = `
                   disablePadding={true}
                 >
                   <Component
-                    className="css-18fb6u1-StyledPanelHeader css-1t1cqk30"
+                    className="css-4b6nsw-StyledPanelHeader-getPadding css-1t1cqk30"
                     disablePadding={true}
                   >
                     <Flex
                       align="center"
-                      className="css-18fb6u1-StyledPanelHeader css-1t1cqk30"
+                      className="css-4b6nsw-StyledPanelHeader-getPadding css-1t1cqk30"
                       justify="space-between"
                     >
                       <Base
                         align="center"
-                        className="css-1t1cqk30 css-1pqpjvf"
+                        className="css-1t1cqk30 css-1nuqm32-StyledPanelHeader-getPadding"
                         justify="space-between"
                       >
                         <div
-                          className="css-1t1cqk30 css-1pqpjvf"
+                          className="css-1t1cqk30 css-1nuqm32-StyledPanelHeader-getPadding"
                           is={null}
                         >
                           <Flex
@@ -353,11 +353,11 @@ exports[`ApiTokens renders with result 1`] = `
                           p={2}
                         >
                           <Base
-                            className="css-hf2tyc0 css-1rx8ry9-StyledPanelItem css-q9h14u0"
+                            className="css-hf2tyc0 css-95j4yk-StyledPanelItem-StyledPanelItem css-q9h14u0"
                             p={2}
                           >
                             <div
-                              className="css-hf2tyc0 css-1rx8ry9-StyledPanelItem css-q9h14u0"
+                              className="css-hf2tyc0 css-95j4yk-StyledPanelItem-StyledPanelItem css-q9h14u0"
                               is={null}
                             >
                               <div>
@@ -411,13 +411,13 @@ exports[`ApiTokens renders with result 1`] = `
                                                               value="apitoken123"
                                                             >
                                                               <Component
-                                                                className="css-14cbxk4-StyledInput css-1ik89gz0"
+                                                                className="css-5but09-StyledInput-readOnlyStyle-inputStyles css-1ik89gz0"
                                                                 onClick={[Function]}
                                                                 readOnly={true}
                                                                 value="apitoken123"
                                                               >
                                                                 <input
-                                                                  className="css-14cbxk4-StyledInput css-1ik89gz0"
+                                                                  className="css-5but09-StyledInput-readOnlyStyle-inputStyles css-1ik89gz0"
                                                                   onClick={[Function]}
                                                                   readOnly={true}
                                                                   value="apitoken123"
@@ -512,7 +512,7 @@ exports[`ApiTokens renders with result 1`] = `
                                                                     width="12px"
                                                                   >
                                                                     <svg
-                                                                      className="css-1vxxnb61 css-1rlza0i-StyledSvg css-adkcw30"
+                                                                      className="css-1vxxnb61 css-1jjmnki-StyledSvg-StyledInlineSvg css-adkcw30"
                                                                       height="12px"
                                                                       viewBox={Object {}}
                                                                       width="12px"

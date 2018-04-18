@@ -576,7 +576,7 @@ exports[`AuditLogView renders 1`] = `
             >
               <Wrapper>
                 <div
-                  className="css-foidy-Wrapper css-17jmgia0"
+                  className="css-t5gfr9-Wrapper css-17jmgia0"
                 >
                   <Flex
                     align="center"
@@ -801,7 +801,7 @@ exports[`AuditLogView renders 1`] = `
             <Panel>
               <StyledPanel>
                 <div
-                  className="css-wfa8ap-StyledPanel css-5bw71w0"
+                  className="css-17bqt4b-StyledPanel css-5bw71w0"
                 >
                   <PanelHeader
                     disablePadding={true}
@@ -810,21 +810,21 @@ exports[`AuditLogView renders 1`] = `
                       disablePadding={true}
                     >
                       <Component
-                        className="css-18fb6u1-StyledPanelHeader css-1t1cqk30"
+                        className="css-bkejvr-StyledPanelHeader-getPadding css-1t1cqk30"
                         disablePadding={true}
                       >
                         <Flex
                           align="center"
-                          className="css-18fb6u1-StyledPanelHeader css-1t1cqk30"
+                          className="css-bkejvr-StyledPanelHeader-getPadding css-1t1cqk30"
                           justify="space-between"
                         >
                           <Base
                             align="center"
-                            className="css-1t1cqk30 css-1pqpjvf"
+                            className="css-1t1cqk30 css-1w90zj8-StyledPanelHeader-getPadding"
                             justify="space-between"
                           >
                             <div
-                              className="css-1t1cqk30 css-1pqpjvf"
+                              className="css-1t1cqk30 css-1w90zj8-StyledPanelHeader-getPadding"
                               is={null}
                             >
                               <Box
@@ -916,11 +916,11 @@ exports[`AuditLogView renders 1`] = `
                         >
                           <Base
                             align="center"
-                            className="css-e60paj-StyledPanelItem css-q9h14u0"
+                            className="css-1oshx4q-StyledPanelItem css-q9h14u0"
                             p={0}
                           >
                             <div
-                              className="css-e60paj-StyledPanelItem css-q9h14u0"
+                              className="css-1oshx4q-StyledPanelItem css-q9h14u0"
                               is={null}
                             >
                               <UserInfo
@@ -1259,11 +1259,11 @@ exports[`AuditLogView renders 1`] = `
                         >
                           <Base
                             align="center"
-                            className="css-e60paj-StyledPanelItem css-q9h14u0"
+                            className="css-1oshx4q-StyledPanelItem css-q9h14u0"
                             p={0}
                           >
                             <div
-                              className="css-e60paj-StyledPanelItem css-q9h14u0"
+                              className="css-1oshx4q-StyledPanelItem css-q9h14u0"
                               is={null}
                             >
                               <UserInfo

@@ -199,20 +199,20 @@ exports[`ProjectAlertRuleDetails Edit alert rule renders 1`] = `
                 <PanelHeader>
                   <StyledPanelHeader>
                     <Component
-                      className="css-kf498j-StyledPanelHeader css-1t1cqk30"
+                      className="css-tvaic5-StyledPanelHeader-getPadding css-1t1cqk30"
                     >
                       <Flex
                         align="center"
-                        className="css-kf498j-StyledPanelHeader css-1t1cqk30"
+                        className="css-tvaic5-StyledPanelHeader-getPadding css-1t1cqk30"
                         justify="space-between"
                       >
                         <Base
                           align="center"
-                          className="css-1t1cqk30 css-hj6snb"
+                          className="css-1t1cqk30 css-ghitdz-StyledPanelHeader-getPadding"
                           justify="space-between"
                         >
                           <div
-                            className="css-1t1cqk30 css-hj6snb"
+                            className="css-1t1cqk30 css-ghitdz-StyledPanelHeader-getPadding"
                             is={null}
                           >
                             Edit Alert Rule
@@ -1188,20 +1188,20 @@ exports[`ProjectAlertRuleDetails New alert rule renders 1`] = `
                 <PanelHeader>
                   <StyledPanelHeader>
                     <Component
-                      className="css-kf498j-StyledPanelHeader css-1t1cqk30"
+                      className="css-tvaic5-StyledPanelHeader-getPadding css-1t1cqk30"
                     >
                       <Flex
                         align="center"
-                        className="css-kf498j-StyledPanelHeader css-1t1cqk30"
+                        className="css-tvaic5-StyledPanelHeader-getPadding css-1t1cqk30"
                         justify="space-between"
                       >
                         <Base
                           align="center"
-                          className="css-1t1cqk30 css-hj6snb"
+                          className="css-1t1cqk30 css-ghitdz-StyledPanelHeader-getPadding"
                           justify="space-between"
                         >
                           <div
-                            className="css-1t1cqk30 css-hj6snb"
+                            className="css-1t1cqk30 css-ghitdz-StyledPanelHeader-getPadding"
                             is={null}
                           >
                             New Alert Rule

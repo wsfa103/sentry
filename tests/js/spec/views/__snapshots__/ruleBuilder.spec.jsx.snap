@@ -71,7 +71,7 @@ exports[`RuleBuilder render() renders 1`] = `
         value=""
       >
         <input
-          className="css-1t4syiu-Input-BuilderInput css-13f5eg07"
+          className="css-17gm6uc-Input-inputStyles-BuilderInput css-13f5eg07"
           onChange={[Function]}
           placeholder="src/example/*"
           value=""
@@ -91,7 +91,7 @@ exports[`RuleBuilder render() renders 1`] = `
             width="1em"
           >
             <svg
-              className="css-13f5eg08 css-5e2rei-StyledSvg css-adkcw30"
+              className="css-13f5eg08 css-1uv43pt-StyledSvg-Divider css-adkcw30"
               height="1em"
               viewBox={Object {}}
               width="1em"
@@ -467,7 +467,7 @@ exports[`RuleBuilder render() renders 1`] = `
                               width="16px"
                             >
                               <svg
-                                className="css-1vxxnb61 css-1rlza0i-StyledSvg css-adkcw30"
+                                className="css-1vxxnb61 css-1jjmnki-StyledSvg-StyledInlineSvg css-adkcw30"
                                 height="16px"
                                 viewBox={Object {}}
                                 width="16px"
@@ -547,7 +547,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
                 width="1em"
               >
                 <svg
-                  className="css-13f5eg04 css-eomeeu-StyledSvg css-adkcw30"
+                  className="css-13f5eg04 css-1i6gwke-StyledSvg-AddIcon css-adkcw30"
                   height="1em"
                   viewBox={Object {}}
                   width="1em"
@@ -598,7 +598,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
                 width="1em"
               >
                 <svg
-                  className="css-13f5eg04 css-eomeeu-StyledSvg css-adkcw30"
+                  className="css-13f5eg04 css-1i6gwke-StyledSvg-AddIcon css-adkcw30"
                   height="1em"
                   viewBox={Object {}}
                   width="1em"
@@ -649,7 +649,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
                 width="1em"
               >
                 <svg
-                  className="css-13f5eg04 css-eomeeu-StyledSvg css-adkcw30"
+                  className="css-13f5eg04 css-1i6gwke-StyledSvg-AddIcon css-adkcw30"
                   height="1em"
                   viewBox={Object {}}
                   width="1em"
@@ -700,7 +700,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
                 width="1em"
               >
                 <svg
-                  className="css-13f5eg04 css-eomeeu-StyledSvg css-adkcw30"
+                  className="css-13f5eg04 css-1i6gwke-StyledSvg-AddIcon css-adkcw30"
                   height="1em"
                   viewBox={Object {}}
                   width="1em"
@@ -779,7 +779,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
         value="a/bar"
       >
         <input
-          className="css-1t4syiu-Input-BuilderInput css-13f5eg07"
+          className="css-17gm6uc-Input-inputStyles-BuilderInput css-13f5eg07"
           onChange={[Function]}
           placeholder="src/example/*"
           value="a/bar"
@@ -799,7 +799,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
             width="1em"
           >
             <svg
-              className="css-13f5eg08 css-5e2rei-StyledSvg css-adkcw30"
+              className="css-13f5eg08 css-1uv43pt-StyledSvg-Divider css-adkcw30"
               height="1em"
               viewBox={Object {}}
               width="1em"
@@ -1337,7 +1337,7 @@ exports[`RuleBuilder renders with suggestions renders 1`] = `
                               width="16px"
                             >
                               <svg
-                                className="css-1vxxnb61 css-1rlza0i-StyledSvg css-adkcw30"
+                                className="css-1vxxnb61 css-1jjmnki-StyledSvg-StyledInlineSvg css-adkcw30"
                                 height="16px"
                                 viewBox={Object {}}
                                 width="16px"

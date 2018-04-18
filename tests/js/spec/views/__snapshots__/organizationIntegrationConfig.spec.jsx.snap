@@ -26,7 +26,7 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
       >
         <Wrapper>
           <div
-            className="css-foidy-Wrapper css-17jmgia0"
+            className="css-t5gfr9-Wrapper css-17jmgia0"
           >
             <Flex
               align="center"
@@ -83,7 +83,7 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
       <Panel>
         <StyledPanel>
           <div
-            className="css-wfa8ap-StyledPanel css-5bw71w0"
+            className="css-17bqt4b-StyledPanel css-5bw71w0"
           >
             <PanelHeader
               disablePadding={true}
@@ -94,22 +94,22 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
                 hasButtons={true}
               >
                 <Component
-                  className="css-bx554z-StyledPanelHeader css-1t1cqk30"
+                  className="css-72tw6l-StyledPanelHeader-getPadding css-1t1cqk30"
                   disablePadding={true}
                   hasButtons={true}
                 >
                   <Flex
                     align="center"
-                    className="css-bx554z-StyledPanelHeader css-1t1cqk30"
+                    className="css-72tw6l-StyledPanelHeader-getPadding css-1t1cqk30"
                     justify="space-between"
                   >
                     <Base
                       align="center"
-                      className="css-1t1cqk30 css-1wxtvvf"
+                      className="css-1t1cqk30 css-ce5pxn-StyledPanelHeader-getPadding"
                       justify="space-between"
                     >
                       <div
-                        className="css-1t1cqk30 css-1wxtvvf"
+                        className="css-1t1cqk30 css-ce5pxn-StyledPanelHeader-getPadding"
                         is={null}
                       >
                         <Box
@@ -198,12 +198,12 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
                     py={2}
                   >
                     <Base
-                      className="css-17iyzx4-StyledPanelItem css-q9h14u0"
+                      className="css-1uon4oe-StyledPanelItem css-q9h14u0"
                       p={0}
                       py={2}
                     >
                       <div
-                        className="css-17iyzx4-StyledPanelItem css-q9h14u0"
+                        className="css-1uon4oe-StyledPanelItem css-q9h14u0"
                         is={null}
                       >
                         <Box
@@ -250,7 +250,7 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
                               </IntegrationName>
                               <DomainName>
                                 <div
-                                  className="css-1y54ser-DomainName css-1iov4vb2"
+                                  className="css-1ay0cji-DomainName css-1iov4vb2"
                                 >
                                   gtithub.com/test-integration
                                 </div>
@@ -383,21 +383,21 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
         to="/url/with/params/org-slug/"
       >
         <Component
-          className="css-ryqtzi-AlertLink css-1k2xcw02"
+          className="css-o824y1-AlertLink css-1k2xcw02"
           to="/url/with/params/org-slug/"
         >
           <Link
-            className="css-ryqtzi-AlertLink css-1k2xcw02"
+            className="css-o824y1-AlertLink css-1k2xcw02"
             to="/url/with/params/org-slug/"
           >
             <Link
-              className="css-ryqtzi-AlertLink css-1k2xcw02"
+              className="css-o824y1-AlertLink css-1k2xcw02"
               onlyActiveOnIndex={false}
               style={Object {}}
               to="/url/with/params/org-slug/"
             >
               <a
-                className="css-ryqtzi-AlertLink css-1k2xcw02"
+                className="css-o824y1-AlertLink css-1k2xcw02"
                 onClick={[Function]}
                 style={Object {}}
               >
@@ -484,7 +484,7 @@ exports[`OrganizationIntegrationConfig render() with one integration renders 1`]
                   </Description>
                   <AuthorName>
                     <div
-                      className="css-v0poyl-AuthorName css-1iov4vb5"
+                      className="css-agaydm-AuthorName css-1iov4vb5"
                     >
                       By Morty
                     </div>

@@ -250,6 +250,10 @@ class ProjectSummarySerializer(ProjectWithTeamSerializer):
             'firstEvent': obj.first_event,
             'platform': obj.platform,
         }
+
+        if hasattr(obj, 'platforms'):
+            context['platforms'] = getattr(obj, 'platforms')
+
         if 'stats' in attrs:
             context['stats'] = attrs['stats']
         return context

@@ -5,7 +5,7 @@ import Reflux from 'reflux';
 import createReactClass from 'create-react-class';
 import styled, {css, cx} from 'react-emotion';
 
-import {hideSidebar, showSidebar} from '../../actionCreators/sidebar';
+import {hideSidebar, loadSidebarState, showSidebar} from '../../actionCreators/sidebar';
 import {load as loadIncidents} from '../../actionCreators/incidents';
 import {t} from '../../locale';
 import Broadcasts from './broadcasts';
@@ -41,6 +41,7 @@ class Sidebar extends React.Component {
     jQuery(document).on('click', this.documentClickHandler);
 
     loadIncidents();
+    loadSidebarState();
   }
 
   componentWillReceiveProps(nextProps, nextContext) {

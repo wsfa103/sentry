@@ -1,5 +1,9 @@
 import Reflux from 'reflux';
 
-let SidebarActions = Reflux.createActions(['hideSidebar', 'showSidebar']);
+let SidebarActions = Reflux.createActions([
+  'loadInitialState',
+  'hideSidebar',
+  'showSidebar',
+]);
 
 export default SidebarActions;

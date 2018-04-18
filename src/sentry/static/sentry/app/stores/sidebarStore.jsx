@@ -7,6 +7,7 @@ const SidebarStore = Reflux.createStore({
 
     this.listenTo(SidebarActions.hideSidebar, this.onHideSidebar);
     this.listenTo(SidebarActions.showSidebar, this.onShowSidebar);
+    this.listenTo(SidebarActions.loadInitialState, this.loadInitialState);
   },
 
   getInitialState() {

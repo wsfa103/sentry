@@ -12,12 +12,6 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 
-  // Fake sidebar rendering until actual sidebar is loaded
-
-  // background-image: linear-gradient(@sidebar-bg-color, @sidebar-bg-color);
-  // background-size: @sidebar-expanded-width;
-  // background-repeat: repeat-y;
-
   &.new-settings {
     overflow-y: scroll;
     background-image: none;
@@ -55,6 +49,14 @@ body.narrow {
   padding: 0;
 
   background: #fff;
+
+  &.body-sidebar {
+    padding-left: @sidebar-expanded-width;
+
+    &.collapsed {
+      padding-left: @sidebar-collapsed-width;
+    }
+  }
 
   &.dialog {
     padding-top: 0;

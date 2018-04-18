@@ -2,7 +2,6 @@ import React from 'react';
 
 import createReactClass from 'create-react-class';
 
-import OrganizationHomeSidebar from './homeSidebar';
 import OrganizationState from '../../mixins/organizationState';
 import ProjectSelector from '../projectHeader/projectSelector';
 import Tooltip from '../../components/tooltip';
@@ -49,30 +48,9 @@ const HomeContainer = createReactClass({
                 </Button>
               </Tooltip>
             )}
-            {access.has('team:write') ? (
-              <Button to={`/organizations/${org.slug}/teams/new/`} priority="primary">
-                {t('New Team')}
-              </Button>
-            ) : (
-              <Tooltip
-                title={t('You do not have enough permission to create new teams')}
-                tooltipOptions={{placement: 'bottom'}}
-              >
-                <Button priority="primary" disabled>
-                  {t('New Team')}
-                </Button>
-              </Tooltip>
-            )}
           </div>
         </div>
-        <div className="container">
-          <div className="content row">
-            <div className="col-md-2 org-sidebar">
-              <OrganizationHomeSidebar />
-            </div>
-            <div className="col-md-10">{this.props.children}</div>
-          </div>
-        </div>
+        <div className="container">{this.props.children}</div>
       </div>
     );
   },

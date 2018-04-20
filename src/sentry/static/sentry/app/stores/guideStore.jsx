@@ -3,6 +3,7 @@ import $ from 'jquery';
 import GuideActions from '../actions/guideActions';
 import HookStore from './hookStore';
 import OrganizationsActions from '../actions/organizationsActions';
+import ProjectActions from '../actions/projectActions';
 
 const GuideStore = Reflux.createStore({
   init() {
@@ -19,6 +20,8 @@ const GuideStore = Reflux.createStore({
 
       currentOrg: null,
 
+      currentProject: null,
+
       forceShow: false,
     };
     this.listenTo(GuideActions.fetchSucceeded, this.onFetchSucceeded);
@@ -27,6 +30,7 @@ const GuideStore = Reflux.createStore({
     this.listenTo(GuideActions.registerAnchor, this.onRegisterAnchor);
     this.listenTo(GuideActions.unregisterAnchor, this.onUnregisterAnchor);
     this.listenTo(OrganizationsActions.setActive, this.onSetActiveOrganization);
+    this.listenTo(ProjectActions.setActive, this.onSetActiveProject);
     this.listenTo(OrganizationsActions.changeSlug, this.onChangeSlug);
 
     window.addEventListener('hashchange', this.onHashChange, false);
@@ -39,6 +43,12 @@ const GuideStore = Reflux.createStore({
 
   onSetActiveOrganization(data) {
     this.state.currentOrg = data;
+    this.trigger(this.state);
+  },
+
+  onSetActiveProject(data) {
+    this.state.currentProject = data;
+    this.trigger(this.state);
   },
 
   onChangeSlug(prev, next) {
@@ -105,7 +115,9 @@ const GuideStore = Reflux.createStore({
       bestGuide = $.extend(true, {}, this.state.guides[bestGuideKey]);
       // Remove steps that don't have an anchor on the page.
       bestGuide.steps = bestGuide.steps.filter(
-        step => step.target && availableTargets.indexOf(step.target) >= 0
+        step =>
+          step.target === null ||
+          (step.target && availableTargets.indexOf(step.target) >= 0)
       );
     }
 

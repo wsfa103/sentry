@@ -30,7 +30,8 @@ const AssistantHelper = createReactClass({
       // is null, if currentStep is 0 the Need-Help button is cued, and if it's > 0
       // the support widget is open.
       currentStep: 0,
-      currentOrg: null,
+      currentOrgSlug: null,
+      currentProjectSlug: null,
     };
   },
 
@@ -53,6 +54,8 @@ const AssistantHelper = createReactClass({
     this.setState({
       currentGuide: data.currentGuide,
       currentStep: data.currentStep,
+      currentOrgSlug: data.currentOrg ? data.currentOrg.slug : null,
+      currentProjectSlug: data.currentProject ? data.currentProject.slug : null,
     });
   },
 
@@ -79,9 +82,8 @@ const AssistantHelper = createReactClass({
               step={currentStep}
               onFinish={closeGuideOrSupport}
               onDismiss={this.handleGuideDismiss}
-              orgSlug={
-                GuideStore.state.currentOrg ? GuideStore.state.currentOrg.slug : null
-              }
+              orgSlug={this.state.currentOrgSlug}
+              projectSlug={this.state.currentProjectSlug}
             />
           )}
 

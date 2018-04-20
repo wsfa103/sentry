@@ -274,6 +274,7 @@ exports[`projectAlertRules renders 1`] = `
               "name": "My alert rule",
             }
           }
+          firstRule={true}
           key="1"
           onDelete={[Function]}
           orgId="org1"
@@ -324,13 +325,13 @@ exports[`projectAlertRules renders 1`] = `
                               to="1/"
                             >
                               <Link
-                                className="css-1763h46-TextColorLink css-ksblzz0"
+                                className="css-1763h46-TextColorLink css-xdz4dv0"
                                 onlyActiveOnIndex={false}
                                 style={Object {}}
                                 to="1/"
                               >
                                 <a
-                                  className="css-1763h46-TextColorLink css-ksblzz0"
+                                  className="css-1763h46-TextColorLink css-xdz4dv0"
                                   onClick={[Function]}
                                   style={Object {}}
                                 >
@@ -502,45 +503,75 @@ exports[`projectAlertRules renders 1`] = `
                   >
                     <RuleDescriptionRow>
                       <div
-                        className="css-16pvk6d-RuleDescriptionRow css-ksblzz1"
+                        className="css-16pvk6d-RuleDescriptionRow css-xdz4dv1"
                       >
                         <RuleDescriptionColumn>
                           <div
-                            className="css-ta36pl-RuleDescriptionColumn css-ksblzz2"
+                            className="css-ta36pl-RuleDescriptionColumn css-xdz4dv2"
                           >
                             <Condition>
                               <div
-                                className="css-1d9hhun-Condition css-ksblzz3"
+                                className="css-1d9hhun-Condition css-xdz4dv3"
                               >
                                 <h6>
                                   When 
                                   <strong />
                                    of these conditions are met:
                                 </h6>
-                                <table
-                                  className="conditions-list table"
+                                <GuideAnchor
+                                  condition={true}
+                                  target="alert_conditions"
+                                  type="text"
                                 >
-                                  <tbody>
-                                    <tr
-                                      key="0"
+                                  <GuideAnchorContainer
+                                    innerRef={[Function]}
+                                    type="text"
+                                  >
+                                    <div
+                                      className="css-9u5for-GuideAnchorContainer css-5e93r80"
+                                      type="text"
                                     >
-                                      <td>
-                                        An alert is first seen
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                      <table
+                                        className="conditions-list table"
+                                      >
+                                        <tbody>
+                                          <tr
+                                            key="0"
+                                          >
+                                            <td>
+                                              An alert is first seen
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <StyledGuideAnchor
+                                        active={false}
+                                        className="guide-anchor-ping alert_conditions"
+                                      >
+                                        <div
+                                          className="guide-anchor-ping alert_conditions css-1yndvnf-StyledGuideAnchor css-5e93r81"
+                                        >
+                                          <StyledGuideAnchorRipples>
+                                            <div
+                                              className="css-1t9mqkr-StyledGuideAnchorRipples css-5e93r82"
+                                            />
+                                          </StyledGuideAnchorRipples>
+                                        </div>
+                                      </StyledGuideAnchor>
+                                    </div>
+                                  </GuideAnchorContainer>
+                                </GuideAnchor>
                               </div>
                             </Condition>
                           </div>
                         </RuleDescriptionColumn>
                         <RuleDescriptionColumn>
                           <div
-                            className="css-ta36pl-RuleDescriptionColumn css-ksblzz2"
+                            className="css-ta36pl-RuleDescriptionColumn css-xdz4dv2"
                           >
                             <Condition>
                               <div
-                                className="css-1d9hhun-Condition css-ksblzz3"
+                                className="css-1d9hhun-Condition css-xdz4dv3"
                               >
                                 <h6>
                                   Take these actions at most
@@ -558,19 +589,49 @@ exports[`projectAlertRules renders 1`] = `
                                    
                                   for an issue:
                                 </h6>
-                                <table
-                                  className="actions-list table"
+                                <GuideAnchor
+                                  condition={true}
+                                  target="alert_actions"
+                                  type="text"
                                 >
-                                  <tbody>
-                                    <tr
-                                      key="0"
+                                  <GuideAnchorContainer
+                                    innerRef={[Function]}
+                                    type="text"
+                                  >
+                                    <div
+                                      className="css-9u5for-GuideAnchorContainer css-5e93r80"
+                                      type="text"
                                     >
-                                      <td>
-                                        Send a notification to all services
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
+                                      <table
+                                        className="actions-list table"
+                                      >
+                                        <tbody>
+                                          <tr
+                                            key="0"
+                                          >
+                                            <td>
+                                              Send a notification to all services
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <StyledGuideAnchor
+                                        active={false}
+                                        className="guide-anchor-ping alert_actions"
+                                      >
+                                        <div
+                                          className="guide-anchor-ping alert_actions css-1yndvnf-StyledGuideAnchor css-5e93r81"
+                                        >
+                                          <StyledGuideAnchorRipples>
+                                            <div
+                                              className="css-1t9mqkr-StyledGuideAnchorRipples css-5e93r82"
+                                            />
+                                          </StyledGuideAnchorRipples>
+                                        </div>
+                                      </StyledGuideAnchor>
+                                    </div>
+                                  </GuideAnchorContainer>
+                                </GuideAnchor>
                               </div>
                             </Condition>
                           </div>

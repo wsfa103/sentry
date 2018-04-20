@@ -10,19 +10,13 @@ import {load as loadIncidents} from '../../actionCreators/incidents';
 import {t} from '../../locale';
 import Broadcasts from './broadcasts';
 import ConfigStore from '../../stores/configStore';
-import IconSidebarBookmarks from '../../icons/icon-sidebar-bookmarks';
-import IconSidebarCollapse from '../../icons/icon-sidebar-collapse';
-import IconSidebarHistory from '../../icons/icon-sidebar-history';
-import IconSidebarOverview from '../../icons/icon-sidebar-overview';
-import IconSidebarUser from '../../icons/icon-sidebar-user';
 import Incidents from './incidents';
 import OnboardingStatus from './onboardingStatus';
 import SentryTypes from '../../proptypes';
 import SidebarDropdown from './sidebarDropdown';
 import SidebarItem from './sidebarItem';
 import SidebarStore from '../../stores/sidebarStore';
-
-const ICON_SIZE = 22;
+import InlineSvg from '../inlineSvg';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -132,27 +126,23 @@ class Sidebar extends React.Component {
             />
           </SidebarSection>
 
-          <Separator />
-
           <SidebarSection>
             <SidebarItem
               collapsed={collapsed}
               hasPanel={hasPanel}
               onClick={this.hidePanel}
-              icon={<IconSidebarOverview size={ICON_SIZE} />}
+              icon={<InlineSvg src="icon-projects" />}
               label={t('Projects')}
               to={`/organizations/${organization.slug}/projects/`}
             />
           </SidebarSection>
 
-          <Separator />
-
           <SidebarSection>
             <SidebarItem
               collapsed={collapsed}
               hasPanel={hasPanel}
               onClick={this.hidePanel}
-              icon={<IconSidebarUser size={ICON_SIZE} />}
+              icon={<InlineSvg src="icon-user" />}
               label={t('Assigned to me')}
               to={`/organizations/${organization.slug}/issues/assigned/`}
             />
@@ -160,7 +150,7 @@ class Sidebar extends React.Component {
               collapsed={collapsed}
               hasPanel={hasPanel}
               onClick={this.hidePanel}
-              icon={<IconSidebarBookmarks size={ICON_SIZE} />}
+              icon={<InlineSvg src="icon-star" />}
               label={t('Starred issues')}
               to={`/organizations/${organization.slug}/issues/bookmarks/`}
             />
@@ -168,19 +158,18 @@ class Sidebar extends React.Component {
               collapsed={collapsed}
               hasPanel={hasPanel}
               onClick={this.hidePanel}
-              icon={<IconSidebarHistory size={ICON_SIZE} />}
+              icon={<InlineSvg src="icon-history" />}
               label={t('Recently viewed')}
               to={`/organizations/${organization.slug}/issues/history/`}
             />
           </SidebarSection>
 
-          <Separator />
           <SidebarSection>
             <SidebarItem
               collapsed={collapsed}
               hasPanel={hasPanel}
               onClick={this.hidePanel}
-              icon={<IconSidebarOverview size={ICON_SIZE} />}
+              icon={<InlineSvg src="icon-activity" />}
               label={t('Activity')}
               to={`/organizations/${organization.slug}/activity/`}
             />
@@ -188,7 +177,7 @@ class Sidebar extends React.Component {
               collapsed={collapsed}
               hasPanel={hasPanel}
               onClick={this.hidePanel}
-              icon={<IconSidebarOverview size={ICON_SIZE} />}
+              icon={<InlineSvg src="icon-stats" />}
               label={t('Stats')}
               to={`/organizations/${organization.slug}/stats/`}
             />
@@ -224,12 +213,10 @@ class Sidebar extends React.Component {
             />
           </SidebarSection>
 
-          <Separator />
-
           <SidebarSection>
             <SidebarItem
               collapsed={collapsed}
-              icon={<StyledIconSidebarCollapse size={ICON_SIZE} collapsed={collapsed} />}
+              icon={<StyledInlineSvg src="icon-collapse" collapsed={collapsed} />}
               label={t('Collapse')}
               onClick={this.toggleSidebar}
             />
@@ -275,14 +262,8 @@ const StyledSidebar = styled('div')`
   ${({theme, collapsed}) => collapsed && `width: ${theme.sidebar.collapsedWidth};`};
 `;
 
-const Separator = styled('hr')`
-  width: 30px;
-  border-top-color: ${p => p.theme.sidebar.divider};
-  margin: 0;
-`;
-
 const SidebarSection = styled('div')`
-  margin: 20px 0;
+  margin: 24px 0;
 `;
 
 const ExpandedIcon = css`
@@ -292,8 +273,8 @@ const ExpandedIcon = css`
 const CollapsedIcon = css`
   transform: rotate(180deg);
 `;
-const StyledIconSidebarCollapse = styled(({className, collapsed, ...props}) => (
-  <IconSidebarCollapse
+const StyledInlineSvg = styled(({className, collapsed, ...props}) => (
+  <InlineSvg
     className={cx(className, ExpandedIcon, collapsed && CollapsedIcon)}
     {...props}
   />

@@ -177,7 +177,7 @@ class SidebarDropdown extends React.Component {
                   <Avatar
                     css={{marginRight: collapsed ? 0 : 12}}
                     organization={org}
-                    size={30}
+                    size={32}
                   />
                   {!collapsed && (
                     <div>

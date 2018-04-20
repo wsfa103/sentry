@@ -6,8 +6,8 @@ import styled from 'react-emotion';
 
 import {t} from '../../locale';
 import Button from '../buttons/button';
-import IconSidebarStatus from '../../icons/icon-sidebar-status';
 import IncidentStore from '../../stores/incidentStore';
+import InlineSvg from '../inlineSvg';
 import SidebarItem from './sidebarItem';
 import SidebarPanel from './sidebarPanel';
 import SidebarPanelEmpty from './sidebarPanelEmpty';
@@ -53,7 +53,12 @@ const Incidents = createReactClass({
           id="statusupdate"
           collapsed={collapsed}
           active={active}
-          icon={<IconSidebarStatus size={22} className="animated pulse infinite" />}
+          icon={
+            <InlineSvg
+              src="icon-circle-exclamation"
+              className="animated pulse infinite"
+            />
+          }
           label={t('Service status')}
           onClick={onShowPanel}
         />

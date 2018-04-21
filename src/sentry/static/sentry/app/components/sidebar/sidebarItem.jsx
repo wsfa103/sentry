@@ -103,7 +103,7 @@ const getActiveStyle = ({active, theme}) => {
     }
 
     &:before {
-      background-color: ${theme.red};
+      background-color: ${theme.purple};
     }
   `;
 };
@@ -115,7 +115,7 @@ const StyledSidebarItem = styled(({active, ...props}) => <Link {...props} />)`
   cursor: pointer;
   font-size: 15px;
   line-height: 32px;
-  height: 32px;
+  height: 34px;
 
   transition: 0.15s color linear;
 
@@ -126,7 +126,7 @@ const StyledSidebarItem = styled(({active, ...props}) => <Link {...props} />)`
     top: 5px;
     left: -20px;
     bottom: 5px;
-    width: 4px;
+    width: 5px;
     border-radius: 0 3px 3px 0;
     background-color: transparent;
     transition: 0.15s background-color linear;
@@ -134,7 +134,7 @@ const StyledSidebarItem = styled(({active, ...props}) => <Link {...props} />)`
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.gray3};
+    color: ${p => p.theme.gray1};
   }
 
   ${getActiveStyle};
@@ -149,7 +149,7 @@ const SidebarItemWrapper = styled('div')`
 const SidebarItemIcon = styled('span')`
   content: '';
   display: inline-block;
-  width: 30px;
+  width: 32px;
   height: 22px;
   font-size: 22px;
 

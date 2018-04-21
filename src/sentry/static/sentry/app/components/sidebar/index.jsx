@@ -246,9 +246,10 @@ export default SidebarContainer;
 
 const StyledSidebar = styled('div')`
   background: ${p => p.theme.sidebar.background};
+  background: linear-gradient(${p => p.theme.gray4}, ${p => p.theme.gray5});
   color: ${p => p.theme.sidebar.color};
   line-height: 1;
-  padding: 0 20px;
+  padding: 0 19px; /* (70 - 32) / 2 */
   width: ${p => p.theme.sidebar.expandedWidth};
   position: fixed;
   top: 0;

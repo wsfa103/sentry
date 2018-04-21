@@ -320,7 +320,7 @@ const MenuItemLink = styled(({to, href, ...props}) => {
 
   &:hover,
   &:active {
-    background: ${p => p.theme.gray1};
+    background: ${p => p.theme.offWhite};
     color: ${p => p.theme.gray5};
   }
 

@@ -151,7 +151,7 @@ const SidebarItemIcon = styled('span')`
   display: inline-block;
   width: 32px;
   height: 22px;
-  font-size: 22px;
+  font-size: 20px;
 
   svg {
     display: block;

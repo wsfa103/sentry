@@ -29,7 +29,7 @@ class SidebarPanelItem extends React.Component {
 
         {link && (
           <Text>
-            <Link href={link}>{t('Read More')}</Link>
+            <ExternalLink href={link}>{t('Read More')}</ExternalLink>
           </Text>
         )}
       </SidebarPanelItemRoot>
@@ -51,6 +51,7 @@ const SidebarPanelItemRoot = styled('div')`
 const Title = styled(({hasSeen, ...props}) => <div {...props} />)`
   font-size: 15px;
   margin-bottom: 5px;
+  color: ${p => p.theme.gray5};
   ${p => !p.hasSeen && 'font-weight: 600;'};
 
   .culprit {
@@ -60,19 +61,12 @@ const Title = styled(({hasSeen, ...props}) => <div {...props} />)`
 
 const Text = styled('div')`
   margin-bottom: 5px;
+
   &:last-child {
     margin-bottom: 0;
   }
 `;
 
 const Message = styled(Text)`
-  color: #493e54;
-`;
-
-const Link = styled(ExternalLink)`
-  color: #625471;
-  &:hover {
-    color: #315cac;
-    text-decoration: none;
-  }
+  color: ${p => p.theme.gray3};
 `;

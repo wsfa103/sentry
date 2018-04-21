@@ -47,7 +47,7 @@ const StyledSidebarPanel = styled(({collapsed, ...props}) => <div {...props} />)
 
 const SidebarPanelHeader = styled('div')`
   border-bottom: 1px solid ${p => p.theme.borderLight};
-  padding: 23px 20px 20px;
+  padding: 20px;
   background: ${p => p.theme.background};
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
   height: ${p => p.theme.sidebar.panel.headerHeight};
@@ -65,7 +65,7 @@ const PanelClose = styled('a')`
   float: right;
   font-size: 22px;
   position: relative;
-  top: -3px;
+  top: 0;
   right: -3px;
   color: ${p => p.theme.gray3};
 
@@ -77,5 +77,4 @@ const PanelClose = styled('a')`
 const Title = styled('div')`
   font-size: 18px;
   margin: 0;
-  font-weight: normal;
 `;

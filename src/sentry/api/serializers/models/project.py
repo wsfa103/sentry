@@ -130,6 +130,14 @@ class ProjectSerializer(Serializer):
         else:
             stats = None
 
+        project_ids = [i.id for i in item_list]
+        platforms = ProjectPlatform.objects.filter(
+            project_id__in=project_ids,
+        ).values_list('project_id', 'platform')
+        platforms_by_project = defaultdict(list)
+        for project_id, platform in platforms:
+            platforms_by_project[project_id].append(platform)
+
         result = self.get_access_by_project(item_list, user)
         for item in item_list:
             result[item].update({
@@ -139,6 +147,8 @@ class ProjectSerializer(Serializer):
                     (item.id, 'mail:alert'),
                     default_subscribe,
                 )),
+
+                'platforms': platforms_by_project[item.id]
             })
             if stats:
                 result[item]['stats'] = stats[item.id]
@@ -219,17 +229,8 @@ class ProjectWithTeamSerializer(ProjectSerializer):
         for pt in project_teams:
             teams_by_project_id[pt.project_id].append(teams[pt.team_id])
 
-        project_ids = [i.id for i in item_list]
-        platforms = ProjectPlatform.objects.filter(
-            project_id__in=project_ids,
-        ).values_list('project_id', 'platform')
-        platforms_by_project = defaultdict(list)
-        for project_id, platform in platforms:
-            platforms_by_project[project_id].append(platform)
-
         for item in item_list:
             attrs[item]['teams'] = teams_by_project_id[item.id]
-            attrs[item]['platforms'] = platforms_by_project[item.id]
         return attrs
 
     def serialize(self, obj, attrs, user):

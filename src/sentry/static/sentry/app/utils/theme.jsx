@@ -1,4 +1,6 @@
 const theme = {
+  breakpoints: [768, 992, 1200],
+
   offWhite: '#FAF9FB',
   whiteDark: '#fbfbfc',
   white: '#fff',
@@ -107,6 +109,7 @@ const theme = {
     smallBadgeSize: '11px',
     collapsedWidth: '70px',
     expandedWidth: '220px',
+    mobileHeight: '54px',
     menuSpacing: '15px',
     panel: {
       width: '320px',

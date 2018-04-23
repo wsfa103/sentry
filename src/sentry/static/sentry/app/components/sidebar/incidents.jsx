@@ -16,6 +16,7 @@ const Incidents = createReactClass({
   displayName: 'Incidents',
 
   propTypes: {
+    orientation: PropTypes.oneOf(['top', 'left']),
     collapsed: PropTypes.bool,
     showPanel: PropTypes.bool,
     currentPanel: PropTypes.string,
@@ -38,7 +39,14 @@ const Incidents = createReactClass({
   },
 
   render() {
-    let {collapsed, currentPanel, showPanel, hidePanel, onShowPanel} = this.props;
+    let {
+      orientation,
+      collapsed,
+      currentPanel,
+      showPanel,
+      hidePanel,
+      onShowPanel,
+    } = this.props;
     let {status} = this.state;
     if (!status) return null;
     let active = currentPanel === 'statusupdate';
@@ -51,6 +59,7 @@ const Incidents = createReactClass({
       <div>
         <SidebarItem
           id="statusupdate"
+          orientation={orientation}
           collapsed={collapsed}
           active={active}
           icon={

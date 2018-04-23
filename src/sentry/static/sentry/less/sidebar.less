@@ -17,6 +17,18 @@
   }
 }
 
+@media (max-width: 767px) {
+  .body-sidebar {
+    padding-top: @sidebar-mobile-height;
+    padding-left: 0;
+    background-image: none;
+
+    &.collapsed {
+      padding-left: 0;
+    }
+  }
+}
+
 @keyframes offset {
   to {
     stroke-dashoffset: 0;

@@ -17,6 +17,8 @@ import SidebarDropdown from './sidebarDropdown';
 import SidebarItem from './sidebarItem';
 import SidebarStore from '../../stores/sidebarStore';
 import InlineSvg from '../inlineSvg';
+import theme from '../../utils/theme';
+import space from '../../styles/space';
 
 class Sidebar extends React.Component {
   static propTypes = {
@@ -27,7 +29,15 @@ class Sidebar extends React.Component {
 
   constructor(...args) {
     super(...args);
-    this.state = {};
+    this.state = {
+      horizontal: false,
+    };
+
+    if (!window.matchMedia) return;
+    // TODO(billy): We should consider moving this into a component
+    this.mq = window.matchMedia(`(max-width: ${theme.breakpoints[0]}px)`);
+    this.mq.addListener(this.handleMediaQueryChange);
+    this.state.horizontal = this.mq.matches;
   }
 
   componentDidMount() {
@@ -59,6 +69,8 @@ class Sidebar extends React.Component {
   componentWillUnmount() {
     jQuery(document).off('click', this.documentClickHandler);
     jQuery(document.body).removeClass('body-sidebar');
+    this.mq.removeListener(this.handleMediaQueryChange);
+    this.mq = null;
   }
 
   toggleSidebar = () => {
@@ -75,6 +87,12 @@ class Sidebar extends React.Component {
     if (window.location.hash == '#welcome') {
       this.setState({showTodos: true});
     }
+  };
+
+  handleMediaQueryChange = changed => {
+    this.setState({
+      horizontal: changed.matches,
+    });
   };
 
   // Hide slideout panel
@@ -107,18 +125,25 @@ class Sidebar extends React.Component {
 
   render() {
     let {organization, collapsed} = this.props;
-    let {currentPanel, showPanel} = this.state;
+    let {currentPanel, showPanel, horizontal} = this.state;
     let config = ConfigStore.getConfig();
     let user = ConfigStore.get('user');
     let hasPanel = !!currentPanel;
+    let orientation = horizontal ? 'top' : 'left';
+    let sidebarItemProps = {
+      orientation,
+      collapsed,
+      hasPanel,
+    };
 
     // TODO(billy): Handle no org state
 
     return (
       <StyledSidebar innerRef={ref => (this.sidebar = ref)} collapsed={collapsed}>
-        <div>
+        <SidebarSectionGroup>
           <SidebarSection>
             <SidebarDropdown
+              orientation={orientation}
               collapsed={collapsed}
               org={organization}
               user={user}
@@ -128,8 +153,7 @@ class Sidebar extends React.Component {
 
           <SidebarSection>
             <SidebarItem
-              collapsed={collapsed}
-              hasPanel={hasPanel}
+              {...sidebarItemProps}
               onClick={this.hidePanel}
               icon={<InlineSvg src="icon-projects" />}
               label={t('Projects')}
@@ -139,24 +163,21 @@ class Sidebar extends React.Component {
 
           <SidebarSection>
             <SidebarItem
-              collapsed={collapsed}
-              hasPanel={hasPanel}
+              {...sidebarItemProps}
               onClick={this.hidePanel}
               icon={<InlineSvg src="icon-user" />}
               label={t('Assigned to me')}
               to={`/organizations/${organization.slug}/issues/assigned/`}
             />
             <SidebarItem
-              collapsed={collapsed}
-              hasPanel={hasPanel}
+              {...sidebarItemProps}
               onClick={this.hidePanel}
               icon={<InlineSvg src="icon-star" />}
               label={t('Starred issues')}
               to={`/organizations/${organization.slug}/issues/bookmarks/`}
             />
             <SidebarItem
-              collapsed={collapsed}
-              hasPanel={hasPanel}
+              {...sidebarItemProps}
               onClick={this.hidePanel}
               icon={<InlineSvg src="icon-history" />}
               label={t('Recently viewed')}
@@ -166,27 +187,26 @@ class Sidebar extends React.Component {
 
           <SidebarSection>
             <SidebarItem
-              collapsed={collapsed}
-              hasPanel={hasPanel}
+              {...sidebarItemProps}
               onClick={this.hidePanel}
               icon={<InlineSvg src="icon-activity" />}
               label={t('Activity')}
               to={`/organizations/${organization.slug}/activity/`}
             />
             <SidebarItem
-              collapsed={collapsed}
-              hasPanel={hasPanel}
+              {...sidebarItemProps}
               onClick={this.hidePanel}
               icon={<InlineSvg src="icon-stats" />}
               label={t('Stats')}
               to={`/organizations/${organization.slug}/stats/`}
             />
           </SidebarSection>
-        </div>
+        </SidebarSectionGroup>
 
-        <div>
+        <SidebarEndSectionGroup>
           <SidebarSection>
             <Broadcasts
+              orientation={orientation}
               collapsed={collapsed}
               showPanel={showPanel}
               currentPanel={currentPanel}
@@ -194,6 +214,7 @@ class Sidebar extends React.Component {
               hidePanel={this.hidePanel}
             />
             <Incidents
+              orientation={orientation}
               collapsed={collapsed}
               showPanel={showPanel}
               currentPanel={currentPanel}
@@ -202,26 +223,30 @@ class Sidebar extends React.Component {
             />
           </SidebarSection>
 
-          <SidebarSection>
-            <OnboardingStatus
-              org={organization}
-              currentPanel={currentPanel}
-              onShowPanel={() => this.togglePanel('todos')}
-              showPanel={showPanel}
-              hidePanel={this.hidePanel}
-              collapsed={collapsed}
-            />
-          </SidebarSection>
+          {!horizontal && (
+            <SidebarSection noMargin>
+              <OnboardingStatus
+                org={organization}
+                currentPanel={currentPanel}
+                onShowPanel={() => this.togglePanel('todos')}
+                showPanel={showPanel}
+                hidePanel={this.hidePanel}
+                collapsed={collapsed}
+              />
+            </SidebarSection>
+          )}
 
-          <SidebarSection>
-            <SidebarItem
-              collapsed={collapsed}
-              icon={<StyledInlineSvg src="icon-collapse" collapsed={collapsed} />}
-              label={t('Collapse')}
-              onClick={this.toggleSidebar}
-            />
-          </SidebarSection>
-        </div>
+          {!horizontal && (
+            <SidebarSection>
+              <SidebarCollapseItem
+                {...sidebarItemProps}
+                icon={<StyledInlineSvg src="icon-collapse" collapsed={collapsed} />}
+                label={t('Collapse')}
+                onClick={this.toggleSidebar}
+              />
+            </SidebarSection>
+          )}
+        </SidebarEndSectionGroup>
       </StyledSidebar>
     );
   }
@@ -244,6 +269,15 @@ const SidebarContainer = withRouter(
 );
 export default SidebarContainer;
 
+const responsiveFlex = css`
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: ${theme.breakpoints[0]}px) {
+    flex-direction: row;
+  }
+`;
+
 const StyledSidebar = styled('div')`
   background: ${p => p.theme.sidebar.background};
   background: linear-gradient(${p => p.theme.gray4}, ${p => p.theme.gray5});
@@ -255,16 +289,34 @@ const StyledSidebar = styled('div')`
   top: 0;
   left: 0;
   bottom: 0;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   z-index: ${p => p.theme.zIndex.sidebar};
+  ${responsiveFlex};
+  ${p => p.collapsed && `width: ${p.theme.sidebar.collapsedWidth};`};
 
-  ${({theme, collapsed}) => collapsed && `width: ${theme.sidebar.collapsedWidth};`};
+  @media (max-width: ${p => p.theme.breakpoints[0]}px) {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: ${p => p.theme.sidebar.mobileHeight};
+    bottom: auto;
+    width: auto;
+    padding: 0;
+    align-items: center;
+  }
 `;
 
-const SidebarSection = styled('div')`
-  margin: 24px 0;
+const SidebarSectionGroup = styled('div')`
+  ${responsiveFlex};
+`;
+
+const SidebarEndSectionGroup = styled(SidebarSectionGroup)``;
+
+const SidebarSection = styled(SidebarSectionGroup)`
+  ${p => !p.noMargin && `margin: ${space(1)} 0`};
+  @media (max-width: ${p => p.theme.breakpoints[0]}px) {
+    margin: 0 ${space(1)};
+  }
 `;
 
 const ExpandedIcon = css`
@@ -280,3 +332,9 @@ const StyledInlineSvg = styled(({className, collapsed, ...props}) => (
     {...props}
   />
 ))``;
+
+const SidebarCollapseItem = styled(SidebarItem)`
+  @media (max-width: ${p => p.theme.breakpoints[0]}px) {
+    display: none;
+  }
+`;

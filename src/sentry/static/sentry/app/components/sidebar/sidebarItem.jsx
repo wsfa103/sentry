@@ -32,6 +32,9 @@ class SidebarItem extends React.Component {
 
     // Additional badge to display after label
     badge: PropTypes.number,
+
+    // Sidebar is at "top" or "left" of screen
+    orientation: PropTypes.oneOf(['top', 'left']),
   };
 
   handleClick = e => {
@@ -54,6 +57,7 @@ class SidebarItem extends React.Component {
       hasPanel,
       collapsed,
       className,
+      orientation,
     } = this.props;
 
     // If there is no active panel open and if path is active according to react-router
@@ -64,9 +68,15 @@ class SidebarItem extends React.Component {
       router.isActive({
         pathname: to,
       });
+    let isTop = orientation === 'top';
+    let placement = isTop ? 'bottom' : 'right';
 
     return (
-      <Tooltip disabled={!collapsed} title={label} tooltipOptions={{html: true}}>
+      <Tooltip
+        disabled={!collapsed}
+        title={label}
+        tooltipOptions={{placement, html: true}}
+      >
         <StyledSidebarItem
           active={active || isActiveRouter}
           href={href}
@@ -76,11 +86,12 @@ class SidebarItem extends React.Component {
         >
           <SidebarItemWrapper>
             <SidebarItemIcon>{icon}</SidebarItemIcon>
-            {!collapsed && (
-              <SidebarItemLabel>
-                <TextOverflow>{label}</TextOverflow>
-              </SidebarItemLabel>
-            )}
+            {!collapsed &&
+              !isTop && (
+                <SidebarItemLabel>
+                  <TextOverflow>{label}</TextOverflow>
+                </SidebarItemLabel>
+              )}
             {badge > 0 && (
               <SidebarItemBadge collapsed={collapsed}>{badge}</SidebarItemBadge>
             )}
@@ -116,6 +127,7 @@ const StyledSidebarItem = styled(({active, ...props}) => <Link {...props} />)`
   font-size: 15px;
   line-height: 32px;
   height: 34px;
+  flex-shrink: 0;
 
   transition: 0.15s color linear;
 
@@ -130,6 +142,20 @@ const StyledSidebarItem = styled(({active, ...props}) => <Link {...props} />)`
     border-radius: 0 3px 3px 0;
     background-color: transparent;
     transition: 0.15s background-color linear;
+  }
+
+  @media (max-width: ${p => p.theme.breakpoints[0]}px) {
+    margin: 0 4px;
+
+    &:before {
+      top: auto;
+      left: 5px;
+      bottom: -10px;
+      height: 5px;
+      width: auto;
+      right: 5px;
+      border-radius: 3px 3px 0 0;
+    }
   }
 
   &:hover,

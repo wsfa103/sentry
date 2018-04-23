@@ -164,6 +164,7 @@ const SwitchOrganizationContainer = withOrganizations(SwitchOrganization);
 
 class SidebarDropdown extends React.Component {
   static propTypes = {
+    orientation: PropTypes.oneOf(['top', 'left']),
     collapsed: PropTypes.bool,
     org: SentryTypes.Organization,
     user: SentryTypes.User,
@@ -171,7 +172,7 @@ class SidebarDropdown extends React.Component {
   };
 
   render() {
-    let {org, collapsed, config, user} = this.props;
+    let {org, orientation, collapsed, config, user} = this.props;
 
     return (
       <DropdownMenu>
@@ -185,14 +186,15 @@ class SidebarDropdown extends React.Component {
                     organization={org}
                     size={32}
                   />
-                  {!collapsed && (
-                    <div>
-                      <DropdownOrgName>
-                        {org.name} <i className="icon-arrow-down" />
-                      </DropdownOrgName>
-                      <DropdownUserName>{user.name}</DropdownUserName>
-                    </div>
-                  )}
+                  {!collapsed &&
+                    orientation !== 'top' && (
+                      <div>
+                        <DropdownOrgName>
+                          {org.name} <i className="icon-arrow-down" />
+                        </DropdownOrgName>
+                        <DropdownUserName>{user.name}</DropdownUserName>
+                      </div>
+                    )}
                 </div>
               </SidebarDropdownActor>
 

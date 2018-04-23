@@ -18,6 +18,7 @@ const Broadcasts = createReactClass({
   displayName: 'Broadcasts',
 
   propTypes: {
+    orientation: PropTypes.oneOf(['top', 'left']),
     collapsed: PropTypes.bool,
     showPanel: PropTypes.bool,
     currentPanel: PropTypes.string,
@@ -116,7 +117,7 @@ const Broadcasts = createReactClass({
   },
 
   render() {
-    let {collapsed, currentPanel, showPanel, hidePanel} = this.props;
+    let {orientation, collapsed, currentPanel, showPanel, hidePanel} = this.props;
     let {broadcasts, loading} = this.state;
 
     let unseenPosts = this.getUnseenIds();
@@ -124,6 +125,7 @@ const Broadcasts = createReactClass({
     return (
       <div>
         <SidebarItem
+          orientation={orientation}
           collapsed={collapsed}
           active={currentPanel == 'broadcasts'}
           badge={unseenPosts.length}

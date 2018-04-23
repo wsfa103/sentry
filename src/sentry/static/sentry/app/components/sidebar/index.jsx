@@ -308,6 +308,7 @@ const StyledSidebar = styled('div')`
 
 const SidebarSectionGroup = styled('div')`
   ${responsiveFlex};
+  flex-shrink: 0;
 `;
 
 const SidebarEndSectionGroup = styled(SidebarSectionGroup)``;

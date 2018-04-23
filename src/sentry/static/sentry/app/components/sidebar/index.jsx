@@ -283,7 +283,7 @@ const StyledSidebar = styled('div')`
   background: linear-gradient(${p => p.theme.gray4}, ${p => p.theme.gray5});
   color: ${p => p.theme.sidebar.color};
   line-height: 1;
-  padding: 0 19px; /* (70 - 32) / 2 */
+  padding: 12px 19px 2px; /* Allows for 32px avatars  */
   width: ${p => p.theme.sidebar.expandedWidth};
   position: fixed;
   top: 0;

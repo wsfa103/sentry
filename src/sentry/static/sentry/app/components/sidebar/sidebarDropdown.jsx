@@ -142,8 +142,14 @@ class SwitchOrganization extends React.Component {
                     </SidebarMenuItem>
                   ))}
                   <Divider />
-                  <SidebarMenuItem to={'/organizations/new/'}>
-                    <InlineSvg src="icon-circle-add" /> {t('Create a new organization')}
+                  <SidebarMenuItem
+                    to={'/organizations/new/'}
+                    style={{alignItems: 'center'}}
+                  >
+                    <MenuItemLabelWithIcon>
+                      <StyledInlineSvg src="icon-circle-add" />
+                      <span>{t('Create a new organization')}</span>
+                    </MenuItemLabelWithIcon>
                   </SidebarMenuItem>
                 </SwitchOrganizationMenu>
               )}
@@ -299,6 +305,20 @@ const MenuItemLabel = styled('span')`
       : css`
           overflow: hidden;
         `};
+`;
+
+const StyledInlineSvg = styled(InlineSvg)`
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  color: ${p => p.theme.gray2};
+`;
+
+const MenuItemLabelWithIcon = styled('span')`
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
 `;
 
 const MenuItemLink = styled(({to, href, ...props}) => {

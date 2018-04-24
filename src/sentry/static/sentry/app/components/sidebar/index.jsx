@@ -97,6 +97,8 @@ class Sidebar extends React.Component {
 
   // Hide slideout panel
   hidePanel = () => {
+    if (!this.state.sidePanel && this.state.currentPanel === '') return;
+
     this.setState({
       showPanel: false,
       currentPanel: '',
